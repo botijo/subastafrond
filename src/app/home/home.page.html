@@ -12,32 +12,110 @@
       <ion-title size="large">Blank</ion-title>
     </ion-toolbar>
   </ion-header>
+
   <ion-list line="none">
     <ion-label> {{ listadoSubastas?.length }} </ion-label>
 
     <ion-item *ngFor="let subasta of listadoSubastas"> 
-      <ion-item-group>
-        <ion-item> 
-          <ion-text> {{subasta.estado}} </ion-text>
-        </ion-item>
-        <ion-item> 
-          <ion-label> {{subasta.expediente}} </ion-label>
-        </ion-item>
-        <ion-item> 
-          <ion-label> Identificador: {{subasta.idSubasta}} </ion-label>
-        </ion-item>
-        <ion-item> 
-          <ion-label> Lugar: {{subasta.lugar}} </ion-label>
-        </ion-item>
-        <ion-item> 
-          <ion-text> Descripción Finca: {{subasta.tipoFinca}} </ion-text>
-        </ion-item>
-        <ion-item> 
-          <ion-label> <a href="{{subasta.url}}">Enlace</a>  </ion-label>
-        </ion-item>        
-      </ion-item-group>
+      <!-- <div>
+        <ion-item-group>
+          <ion-item> 
+            <ion-text> {{subasta.estado}} </ion-text>
+          </ion-item>
+          <ion-item> 
+            <ion-label> {{subasta.expediente}} </ion-label>
+          </ion-item>
+          <ion-item> 
+            <ion-label> Identificador: {{subasta.idSubasta}} </ion-label>
+          </ion-item>
+          <ion-item> 
+            <ion-label> Lugar: {{subasta.lugar}} </ion-label>
+          </ion-item>
+          <ion-item> 
+            <ion-text> Descripción Finca: {{subasta.tipoFinca}} </ion-text>
+          </ion-item>
+          <ion-item> 
+            <ion-label> <a href="{{subasta.url}}">Enlace</a>  </ion-label>
+          </ion-item>        
+        </ion-item-group>
+      </div> -->
+
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>
+    
+            <table class="default">
+              <colgroup >
+                <col width="150">
+                <col width="150" >
+                <col width="150" >
+              </colgroup>                  
+              <tr>        
+                <th>Fecha</th>        
+                <th>Hora</th>        
+                <th>Lugar:</th>                
+              </tr>        
+              <tr>        
+                <td align="center">{{subasta.fechaFin}}</td>        
+                <td align="center">{{subasta.horaFin}}</td>        
+                <td align="center">{{subasta.ubicacionCasa}}</td>
+              </tr>
+            </table>
+    
+            
+          </ion-card-subtitle>
+          <ion-card-title>{{subasta.idSubasta}}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+          {{subasta.tipoFinca}}
+          
+          <ion-label> 
+            <a href="{{subasta.url}}">Mas Información</a>  
+          </ion-label>
+
+        </ion-card-content>
+
+        
+      </ion-card>
+
+      
     </ion-item>
   </ion-list>
+
+  <!-- <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>
+
+        <table class="default">
+          <colgroup >
+            <col width="150">
+            <col width="150" >
+            <col width="150"  >
+          </colgroup>                  
+          <tr>        
+            <th>Fecha</th>        
+            <th>Hora</th>        
+            <th>Ubicacion</th>                
+          </tr>        
+          <tr>        
+            <td align="center">10/06/2021</td>        
+            <td align="center">18:00:00</td>        
+            <td align="center">Sevilla</td>
+          </tr>
+        </table>
+
+        
+      </ion-card-subtitle>
+      <ion-card-title>SUB-JA-2019-135824</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Finca nº7347 inscrita en el Registro de la Propiedad Nº14 de Sevilla, al Tomo 3408, Libro 132, Folio 19.
+      <ion-label> <a href="https://subastas.boe.es/detalleSubasta.php?idSub=SUB-JA-2019-135824&idBus=_dVlWaVQxUlEyVGphaGtpcklaQ0N5bUJxbm1YSi9raTN0WFpzVThWVWR1SnFQWFlHRVNBc2I2MWs2clJYVWJzSjBUdHIxcTBCZTQ0Z0JKNkR5VUVNQk9ZeWc1WUJSOTQxenNFN1B1MlFOdmhXcVc3TGFHamNSa2FWL1pHNUV6ei9zMXpUS3Jwa0JrQzNQdkVFVXpVbFFjSHpPYWNDU3VDQ1dZcDlOcnM1eG1aVlF5L2RkSlhjRmw1a1lMVDk0WXBvSVBGYk8wT1NYY0VzTkVoVzBKRmE0NGJMUUJuaktUeFQvUTlMY05VeEJnOTg0Zm9QSWdyUGYzbnJJa3pLRkZEdVl4YWw3Vnl0endoUlhZNlBnKzFxNVlQSTVpeEtUOE0xTno2TW5MZjhXdWhQeS9JVktKb1ViSDNrS1BSUExZUzVzY0pINyt4SlkxQmxwdm5QN084OTZZcVNzMVpONXY4dkJpbDlGckcwMC8yRWFLcDIrbE5rMEpKZnJzK1laeWxO">Mas Información</a>  </ion-label>
+    </ion-card-content>
+    
+  </ion-card> -->
 
   <!-- <div id="container">
     <strong>Ready to create an app?</strong>
