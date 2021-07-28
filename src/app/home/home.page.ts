@@ -17,16 +17,20 @@ export class HomePage implements OnInit{
     }
 
   ngOnInit(){    
-    this.itemRef = this.db.object('subastasViviendas/');
+    this.itemRef = this.db.object('subastasVehiculos/');
     this.itemRef.snapshotChanges().subscribe(action => {
       let data = action.payload.val();
       for(let key in data){
         let valor = data[key];  
-        console.log(valor);      
+        // console.log(valor);              
         this.listadoSubastas.push(valor);
       }
     });
   }
+
+  truncate(str: String, n:number){
+    return (str.length > n) ? str.substr(0, n-1) + '&hellip;' : str;
+  };
 
 
 }

@@ -41,6 +41,12 @@
       </div> -->
 
       <ion-card>
+        <div>
+          <img src="../../assets/imag/car.png"  class="center"/>
+        </div>
+        <!-- <div *ngIf="condition; else elseBlock">Content to render when condition is true.</div>
+        <ng-template #elseBlock>Content to render when condition is false.</ng-template> -->
+        
         <ion-card-header>
           <ion-card-subtitle>
     
@@ -67,16 +73,22 @@
           <ion-card-title>{{subasta.idSubasta}}</ion-card-title>
         </ion-card-header>
       
-        <ion-card-content>
-          {{subasta.tipoFinca}}
+        <ion-card-content >          
+          <!-- <span class="contenido" >
+            {{ subasta.tipoFinca }}
+          </span> -->
+          <span >
+            {{ subasta.tipoFinca }}
+          </span>
+          <!-- <span>
+            <ion-textarea rows="4" cols="20" disabled="true">{{ subasta.tipoFinca }}</ion-textarea>
+          </span>
+           -->
           
           <ion-label> 
             <a href="{{subasta.url}}">Mas Información</a>  
           </ion-label>
-
         </ion-card-content>
-
-        
       </ion-card>
 
       
