@@ -1,7 +1,8 @@
 {
   "name": "subastas",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {},
+    "cordova": {}
   },
   "type": "angular"
 }
